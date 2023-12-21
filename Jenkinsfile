@@ -24,5 +24,10 @@ pipeline
         archive "target/*.jar"
       }
     }
+     stage("Email Results"){
+      steps{
+        emailext body: '', subject: 'Jenkins Calculator Pipeline status', to: 'rvmakawana@gmail.com'
+      }
+    }
   }
 }
